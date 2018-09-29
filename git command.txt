@@ -1,0 +1,114 @@
+git clone "url-name"
+git init
+git status
+git log
+git log --oneline
+git log --oneline -3
+git log "commit-name" --max-depth=1
+git log --oneline --graph
+git show "commit-name"
+git tag "tag-name" "commit-name"
+git tag
+git show "tag-name"
+
+git remote --verbose
+
+git branch --list
+git branch -a
+git branch -r
+git fetch
+git branch -d "branch-name"
+git branch "new-branch-name"
+git checkout "new-branch-name"
+git checkout -b "new-branch-name" "branch-name"
+
+git merge "branch-name"
+git branch -d "branch-name"
+git push -d "stream-name" "branch-name"
+
+git add .
+git add "directory-name"/*
+git add *.svg
+git add "file-name"
+git add --update
+git add --patch "file-name"
+git reset HEAD "file-name"
+
+git commit -m "message"
+git commit --amend
+git commit
+git commit -a
+git config --global core.excludesfile ~/.gitignore
+
+git push
+git push --set-upstream "stream-name" "branch-name"
+
+###############
+rebase
+
+git pull --rebase=preserve "nickname" "branch-name"
+git rebase "parent-branch-name"
+git mergetool "file-name"
+git rebase --continue
+(git status)
+(git reset HEAD "file-name")
+(git add "file-name")
+git rebase --continue
+
+git reflog
+git push --delete "branch-name"
+git cherry-pick -x commit
+git cherry-pick -x commit --mainline "line-number" (git log --oneline --graph, start from 1)
+git reset --merge ORIG_HEAD
+
+git checkout -- "file-name"
+git reset HEAD "file-name"
+git reset --hard HEAD -- "file-name"
+git reset --hard HEAD
+
+git reset "commit-name" (one previous commit-name)
+git diff
+git diff --staged
+git reset HEAD~3
+
+git rebase --interactive "commit-name"
+edit pick/squash/... etc.
+git add --patch "file-name"
+git cherry-pick "commit-name"
+
+git revert "commit-name"
+git log --merges
+git log --no-merges
+git log --graph --oneline
+git revert --mainline "line-number" "commit-name"
+
+git branch --contains commit
+git revert --no-commit "old-commit-name" "new-commit-name"
+git revert --continue
+
+###########
+delete history completely
+
+git filter-branch --index-filter 'git rm --cached --ignore-unmatch "file-name"' HEAD
+git reflog expire --expire=now --all
+git gc --prune=now
+git push origin --force --all --tags
+git pull --rebase=preserve
+
+
+git remote add "nickname" "url-name"
+git remote remove "nickname"
+git push "nickname" "branch-name"
+git push --all "nickname"
+git push "nickname" "branch-local:branch-remote"
+(git push official main:master)
+
+git fetch --all
+
+git remote add "nickname" "git-url-name"
+
+git branch --remotes
+
+git log --oneline remote_nickname/branch
+git diff current-branch-name...remote_nickname/branch
+
