@@ -31,7 +31,7 @@ plt.xlim(0, 11);    plt.ylim(0, 8)
 plt.scatter(x, y)
 plt.title('02_Linear_Regression_Model_Data')
 # plt.show()
-plt.savefig('02_Linear_Regression_Model_Data.png')
+plt.savefig('results/02_Linear_Regression_Model_Data.png')
 
 
 # ---------------------------------------------------------------- #
