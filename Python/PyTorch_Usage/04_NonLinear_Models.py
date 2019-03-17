@@ -82,3 +82,4 @@ net.state_dict()
 
 torch.save(net,'net.pkl')
 net = torch.load('net.pkl')
+
