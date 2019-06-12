@@ -71,8 +71,7 @@ class Discriminator(nn.Module):
         self.linear2 = nn.Linear(in_features=1024, out_features=512)
         self.linear3 = nn.Linear(in_features=512, out_features=256)
         self.linear4 = nn.Linear(in_features=256, out_features=1)
-    
-    
+        
     def forward(self, x):
         """
         :param x: input tensor[batch_size * 1 * 28 * 28]
